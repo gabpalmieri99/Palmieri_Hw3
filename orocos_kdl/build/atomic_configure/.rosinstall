@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/gab/catkin_ws/orocos_kinematics_dynamics/orocos_kdl/build/devel/setup.sh

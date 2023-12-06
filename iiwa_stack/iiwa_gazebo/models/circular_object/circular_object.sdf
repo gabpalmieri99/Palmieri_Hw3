@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<sdf version="1.6">
+  <model name="circular_object">
+    <link name="link">
+      <inertial>
+        <pose>0 0 0 3.14/2 0 0</pose>
+        <mass>0.001</mass>
+        <inertia>
+          <ixx>3.7499999999999997e-06</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>1.8750008333333333e-06</iyy>
+          <iyz>0.0</iyz>
+          <izz>1.8750008333333333e-06</izz>
+        </inertia>
+      </inertial>
+      <visual name="front_visual">
+        <pose>0 0 0 3.14/2 0 0</pose>
+        <geometry>
+		<cylinder length="0.01" radius="0.15" units="meters" />
+        </geometry>
+        <material>
+          <script>
+            <uri>model://circular_object/materials/scripts</uri>
+            <uri>model://circular_object/materials/textures</uri>
+            <name>Marker</name>
+          </script>
+        </material>
+      </visual>
+      <!-- Hide the marker from the back -->
+      <visual name="rear_visual">
+        <pose>-0 0 0 3.14/2 0 0</pose>
+        <geometry>
+		<cylinder>
+              <radius>0.15</radius>
+              <length>0.001</length>
+            </cylinder>
+        </geometry>
+      </visual>
+      <collision name="collision">
+        <pose>0 0 0 3.14/2 0 0</pose>
+        <geometry>
+		<cylinder>
+              <radius>0.15</radius>
+              <length>0.001</length>
+            </cylinder>
+        </geometry>
+      </collision>
+    </link>
+  </model>
+</sdf>
